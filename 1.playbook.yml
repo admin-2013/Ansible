@@ -8,7 +8,7 @@
       state: present
    - name: Edit index.html file
      copy:
-      content: /home/ubuntu/index.html
+      src: /home/ubuntu/index.html
       dest: /var/www/html/index.html
    - name: Restart apache2
      service:
