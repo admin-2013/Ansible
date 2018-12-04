@@ -53,8 +53,8 @@
      git:
       repo: https://github.com/selenium-saikrishna/TestingOnAWS.git
       dest: /home/ubuntu/testing
-   - name: execute the testing programs
-     shell: java -jar /home/ubuntu/testing/testing.jar
+      #   - name: execute the testing programs
+      # shell: java -jar /home/ubuntu/testing/testing.jar
 - name: Deploy to prod server
   hosts: ProdServer
   tasks:
