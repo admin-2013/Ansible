@@ -1,19 +1,31 @@
 ---
-- name: Creating setup for implementing ci-cd
+- name: install packages implement ci-cd
   hosts: all
   become: yes
   tasks:
-   - name: Install necessary s/w packages
+   - name: install git
      apt:
-      name: "{{item.a}}"
-      state: present
-      update_cache: "{{item.b}}"
-     with_items:
-      - {a: tomcat7,b: yes}
-      - {a: tomcat7-admin,b: no}
-      - {a: default-jdk,b: no}
-      - {a: git,b: no}
-      - {a: maven,b: no}
+         name: git
+         state: present
+   - name: install maven
+     apt:
+          name: maven
+          state: latest
+   - name: install java
+     apt:
+          name: default-jdk
+          state: latest
+   - name: install tomcat
+     apt:
+          name: tomcat8
+          state: present
+          update_cache: yes
+   - name: install admin
+     apt:
+          name: tomcat8-admin
+          state: present
+          update_cache: yes
+
 - name: Continous Download and Continuous Build
   hosts: DevServer
   tasks:
