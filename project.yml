@@ -35,7 +35,7 @@
   tasks:
    - name: Copy the artifact
      copy:
-      src: /home/ubuntu/13.233.204.237/home/ubuntu/mygit/webapp/target/webapp.war
+      src: /home/ubuntu/13.233.83.38/home/ubuntu/mygit/webapp/target/webapp.war
       dest: /var/lib/tomcat7/webapps/qaenv.war
    - name: Download testing code from git
      git:
@@ -48,5 +48,5 @@
   tasks:
    - name: Copy the artifact into prodserver
      copy:
-      src: /home/ubuntu/13.233.201.237/home/ubuntu/mygit/webapp/target/webapp.war
+      src: /home/ubuntu/13.233.83.38/home/ubuntu/mygit/webapp/target/webapp.war
       dest: /var/lib/tomcat7/webapps/prodenv.war
