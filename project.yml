@@ -48,7 +48,7 @@
    - name: Copy the artifact
      copy:
       src: /home/ubuntu/13.233.83.38/home/ubuntu/mygit/webapp/target/webapp.war
-      dest: /var/lib/tomcat7/webapps/qaenv.war
+      dest: /var/lib/tomcat8/webapps/qaenv.war
    - name: Download testing code from git
      git:
       repo: https://github.com/selenium-saikrishna/TestingOnAWS.git
@@ -61,4 +61,4 @@
    - name: Copy the artifact into prodserver
      copy:
       src: /home/ubuntu/13.233.83.38/home/ubuntu/mygit/webapp/target/webapp.war
-      dest: /var/lib/tomcat7/webapps/prodenv.war
+      dest: /var/lib/tomcat8/webapps/prodenv.war
