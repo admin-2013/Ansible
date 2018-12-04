@@ -1,6 +1,7 @@
 ---
 - name: Creating setup for implementing ci-cd
   hosts: all
+  become: yes
   tasks:
    - name: Install necessary s/w packages
      apt:
