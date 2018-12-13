@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 - name: creating dir and files
   hosts: all
   tasks:
@@ -10,6 +9,3 @@
             file:
                     name=dir1
                     state=directory
-=======
-- name: install.
->>>>>>> 6c5c77caceab6fe146a0547597a227647de5c6e3
