@@ -1,1 +1,11 @@
-- name: install
+- name: creating dir and files
+  hosts: all
+  tasks:
+          - name: Creating file
+            file:
+                    name=file1
+                    state=touch
+          - name: Creating dir
+            file:
+                    name=dir1
+                    state=directory
