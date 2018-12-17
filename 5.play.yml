@@ -1,0 +1,13 @@
+- name: Working with VARS_PROMPT
+  hosts: all
+  become: yes
+  vars_prompt:
+   name: F1
+   prompt: Enter the file name
+  tasks:
+     - name: Create file in nodes
+       file:
+         name: '{{F1}}'
+         dest: /home/ubuntu
+         state: touch
+      

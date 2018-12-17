@@ -1,0 +1,12 @@
+- name: Working with tags
+  hosts: all
+  become: yes
+  tasks:
+   - name: First tag
+     raw: echo "MURALI\n" > First.txt
+     tags: 
+      - one
+   - name: Second tag
+     raw: echo "KARRE\n" > Second.txt
+     tags:
+      - two

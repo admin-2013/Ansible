@@ -1,0 +1,20 @@
+---
+- name: Creating users and copy files into users home dir
+  hosts: all
+  become: yes
+  tasks:
+   - name: Creating user
+     user:
+      name: devops
+      password: devops
+      home: /home/ubuntu/devops
+      shell: /bin/bash
+   - name: Creating file
+     file:
+      name: /home/ubuntu/index.html
+      state: touch
+   - name: Sending data
+     copy:
+      dest: /home/ubuntu/index.html
+      content: "Hello world\n"
+...

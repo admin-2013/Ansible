@@ -1,0 +1,16 @@
+- name: Working eith handlers
+  hosts: all
+  become: yes
+  tasks:
+       - name: Creating Dir
+         file:
+             name: Dir
+             dest: /home/ubuntu/
+             state: directory
+         notify: Create File
+  handlers:
+       - name: Create File
+         file:
+             name: file.txt
+             dest: /home/ubuntu/
+             state: touch

@@ -1,0 +1,8 @@
+- name: raw module 
+  hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+   - name: Demo Play
+     raw: date > /home/ubuntu/time.txt
+

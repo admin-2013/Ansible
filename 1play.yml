@@ -1,0 +1,13 @@
+- name: Install apache2  
+  hosts: all
+  become: yes
+  gather_facts: no
+  vars_prompt:  
+    - name: pkg
+      prompt: Enter the package to installi
+  tasks:
+   - name: Install apache2
+     apt: 
+      name: '{{ pkg}}' 
+      state: absent
+      update_cache: yes

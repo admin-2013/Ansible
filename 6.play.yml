@@ -1,0 +1,18 @@
+- name: Working with async and poll
+  hosts: all
+  become: yes
+  tasks: 
+   - name: install apache2
+     apt:
+         name: apache2
+         state: present
+     run_once: true
+     delegate_to: 13.233.178.46
+#     async: 300
+#     poll: 3
+     notify: Restart apache2
+  handlers:
+    - name: Restart apache2
+      service:
+              name: apache2
+              state: restarted

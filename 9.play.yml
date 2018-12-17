@@ -1,0 +1,5 @@
+- name: Working with include
+  hosts: all
+  become: yes
+  tasks:
+   - include: inc.yml

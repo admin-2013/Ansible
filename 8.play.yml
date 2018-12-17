@@ -1,0 +1,13 @@
+- name: Working with when condition
+  hosts: all
+  become: yes
+  tasks:
+   - name: install apache2 in centos/RedHat
+     command: yum install apache2 -y
+     when: ansible_os_family == "RedHat"
+   - name: install apache2 in ubuntu/Debian
+     command: apt-get install apache2 -y
+     when: ansible_os_family == "Debian"
+   - command: echo {{item}}
+     with_items: [ 0, 2, 4, 6, 8, 10 ]
+     when: item > 5

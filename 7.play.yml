@@ -1,0 +1,14 @@
+- name: working with loops
+  hosts: all
+  become: yes
+  tasks:
+      - name: add a users list
+        user:
+                name: '{{ item }}'
+                state: absent
+        with_items:
+                - user1
+                - user2
+                - user3
+                - user4
+
