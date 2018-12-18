@@ -1,0 +1,11 @@
+- name: Working with LINELINFILE
+  hosts: all
+  become: yes
+  tasks:
+   - name: Changing file
+     lineinfile:
+       path: /home/ubuntu/ansible.cfg
+  #    regexp: '^MURALI'
+       regexp: '^Listen '
+       insertbefore: '^#Listen '
+       line: 'Listen 9090'

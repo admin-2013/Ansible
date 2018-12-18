@@ -1,0 +1,13 @@
+- name: Demo on check a directory exits or not 
+  hosts: all
+  become: yes 
+  tasks: 
+    - name: Check a directory 
+      stat: 
+        path: /home/ubuntu/index.html
+      run_once: true
+      delegate_to: 13.232.132.126
+      register: out 
+
+    - debug:
+        var: out

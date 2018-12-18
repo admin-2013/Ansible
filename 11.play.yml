@@ -1,0 +1,10 @@
+- name: Working with Debug Module
+  hosts: all
+  become: yes
+  tasks:
+   - name: Display TIME
+     command: date
+     register: Res
+   - name: output
+     debug:
+       var: Res

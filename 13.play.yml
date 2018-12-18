@@ -1,0 +1,12 @@
+- name: copy Ansible.cfg in nodes
+  hosts: all
+  become: yes
+  tasks:
+   - name: Working with Copy
+     copy:
+        src: /etc/ansible/ansible.cfg
+        dest: /home/ubuntu
+     register: Res
+   - name: Display output
+     debug:
+       var: Res 
